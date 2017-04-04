@@ -53,7 +53,8 @@ class myContentHandler(ContentHandler):
             self.theContent = self.theContent + chars
 
 # --- Main prog
-"""Como lo sacamos de la url esto ya no hace falta"""
+"""Como lo sacamos de la url esto ya no hace falta, lo dejo comentado por
+si se quiere usar el barrapunto.rss """
 #if len(sys.argv)<2:
 #    print ("Usage: python xml-parser-barrapunto.py <document>")
 #    print (" <document>: file name of the document to parse")
