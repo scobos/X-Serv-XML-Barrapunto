@@ -39,10 +39,12 @@ class myContentHandler(ContentHandler):
         elif self.inItem:
             if name == 'title':
                 # To avoid Unicode trouble
+                self.line = "Title: " + self.theContent + "."
                 self.inContent = False
                 self.theContent = ""
             elif name == 'link':
-                lnk = "<p><a href='" + self.theContent + "''>" + self.line + "</a></p><br/>"
+                lnk = "<li><a href='" + self.theContent + "'>" + self.line + "</a></li><br/>"
+                #lnk = "<li><a href='" + self.theContent +  "</a></li><br/>"
                 print (lnk)
                 self.inContent = False
                 self.theContent = ""
@@ -72,4 +74,3 @@ url = "http://barrapunto.com/index.rss"
 xmlStream = request.urlopen(url)
 theParser.parse(xmlStream)
 print("</ul></body></html>")
-print ("Parse complete")
